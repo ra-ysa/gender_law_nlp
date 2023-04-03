@@ -7,7 +7,7 @@ library(data.table)
 # a partir de uma tabela, cria o arquivo json correspondente
 create_json <- function(table, name){
   json_table <- toJSON(table, pretty=TRUE)
-  filename = paste(getwd(), name, ".json", sep="")
+  filename = paste("/home/ray/mestrado/projeto/final/ap/", name, ".json", sep="")
   jsg_file <- file(filename)
   write(json_table,jsg_file)
   close(jsg_file)
@@ -36,7 +36,7 @@ clean_filename <- function(filename){
   return(clean_fn)
 }
 
-lista_processos <- read.delim2(paste(getwd(), "/lista_tjsp2.txt", sep=""), header=FALSE, sep="\n")
+lista_processos <- read.delim2("/home/ray/mestrado/projeto/final/ap/lista_tjsp2.txt", header=FALSE, sep="\n")
 lista_processos <- unlist(lista_processos)
 length(lista_processos)
 u_processos <- unique(lista_processos)
@@ -47,7 +47,7 @@ View(n_occur_processos)
 start_time <- Sys.time()
 # downloads decisions
 # baixa acordaos
-table <- tjsp_baixar_acordaos_cposg(processos=lista_processos, diretorio=getwd())
+table <- tjsp_baixar_acordaos_cposg(processos=lista_processos, diretorio="/home/ray/mestrado/projeto/final/ap")
 end_time <- Sys.time()
 print(paste("Running time for decisions downloads / Tempo total de execucao (download acordaos): ", end_time - start_time, " min"))
 # creates json
