@@ -1,8 +1,0 @@
-#Python 3.9
-pytorch==1.13.1
-pandas
-tqdm
-transformers
-nltk
-wn
-seaborn 
