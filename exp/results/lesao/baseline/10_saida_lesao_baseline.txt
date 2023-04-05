@@ -1,0 +1,114 @@
+BertConfig {
+  "_name_or_path": "neuralmind/bert-base-portuguese-cased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "directionality": "bidi",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.27.3",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 29794
+}
+
+Adjusting learning rate of group 0 to 1.0000e-05.
+Adjusting learning rate of group 0 to 9.9992e-06.
+Epoch 0 - Train Loss: 0.6851 - Train Balanced Accuracy: 0.4926
+Epoch 0.64: adjusting learning rate of group 0 to 9.9997e-06.
+Epoch 0 - Validation Loss: 0.6377 - Validation Balanced Accuracy: 0.5312
+Adjusting learning rate of group 0 to 9.9980e-06.
+Epoch 1 - Train Loss: 0.6978 - Train Balanced Accuracy: 0.4500
+Epoch 0.60: adjusting learning rate of group 0 to 9.9997e-06.
+Epoch 1 - Validation Loss: 0.5921 - Validation Balanced Accuracy: 0.5000
+Adjusting learning rate of group 0 to 9.9981e-06.
+Epoch 2 - Train Loss: 0.6277 - Train Balanced Accuracy: 0.5604
+Epoch 0.59: adjusting learning rate of group 0 to 9.9997e-06.
+Epoch 2 - Validation Loss: 0.5899 - Validation Balanced Accuracy: 0.5000
+Adjusting learning rate of group 0 to 9.9981e-06.
+Epoch 3 - Train Loss: 0.6135 - Train Balanced Accuracy: 0.5538
+Epoch 0.56: adjusting learning rate of group 0 to 9.9998e-06.
+Epoch 3 - Validation Loss: 0.5533 - Validation Balanced Accuracy: 0.5000
+Adjusting learning rate of group 0 to 9.9982e-06.
+Epoch 4 - Train Loss: 0.6200 - Train Balanced Accuracy: 0.5000
+Epoch 0.55: adjusting learning rate of group 0 to 9.9998e-06.
+Epoch 4 - Validation Loss: 0.5423 - Validation Balanced Accuracy: 0.5000
+Adjusting learning rate of group 0 to 9.9982e-06.
+Epoch 5 - Train Loss: 0.6431 - Train Balanced Accuracy: 0.4500
+Epoch 0.57: adjusting learning rate of group 0 to 9.9998e-06.
+Epoch 5 - Validation Loss: 0.5553 - Validation Balanced Accuracy: 0.4792
+Adjusting learning rate of group 0 to 9.9981e-06.
+Epoch 6 - Train Loss: 0.6136 - Train Balanced Accuracy: 0.5615
+Epoch 0.59: adjusting learning rate of group 0 to 9.9997e-06.
+Epoch 6 - Validation Loss: 0.5791 - Validation Balanced Accuracy: 0.5761
+Adjusting learning rate of group 0 to 9.9981e-06.
+Epoch 7 - Train Loss: 0.6184 - Train Balanced Accuracy: 0.5686
+Epoch 0.59: adjusting learning rate of group 0 to 9.9997e-06.
+Epoch 7 - Validation Loss: 0.5731 - Validation Balanced Accuracy: 0.5986
+Adjusting learning rate of group 0 to 9.9981e-06.
+Epoch 8 - Train Loss: 0.6034 - Train Balanced Accuracy: 0.5614
+Epoch 0.58: adjusting learning rate of group 0 to 9.9997e-06.
+Epoch 8 - Validation Loss: 0.5673 - Validation Balanced Accuracy: 0.5986
+Adjusting learning rate of group 0 to 9.9981e-06.
+Epoch 9 - Train Loss: 0.5680 - Train Balanced Accuracy: 0.6657
+Epoch 0.59: adjusting learning rate of group 0 to 9.9997e-06.
+Epoch 9 - Validation Loss: 0.5717 - Validation Balanced Accuracy: 0.6619
+Adjusting learning rate of group 0 to 9.9981e-06.
+Epoch 10 - Train Loss: 0.5549 - Train Balanced Accuracy: 0.6878
+Epoch 0.56: adjusting learning rate of group 0 to 9.9998e-06.
+Epoch 10 - Validation Loss: 0.5423 - Validation Balanced Accuracy: 0.6082
+Adjusting learning rate of group 0 to 9.9982e-06.
+Epoch 11 - Train Loss: 0.5995 - Train Balanced Accuracy: 0.5607
+Epoch 0.54: adjusting learning rate of group 0 to 9.9998e-06.
+Epoch 11 - Validation Loss: 0.5247 - Validation Balanced Accuracy: 0.5224
+Adjusting learning rate of group 0 to 9.9982e-06.
+Epoch 12 - Train Loss: 0.5660 - Train Balanced Accuracy: 0.6271
+Epoch 0.56: adjusting learning rate of group 0 to 9.9998e-06.
+Epoch 12 - Validation Loss: 0.5395 - Validation Balanced Accuracy: 0.5986
+Adjusting learning rate of group 0 to 9.9982e-06.
+Epoch 13 - Train Loss: 0.5631 - Train Balanced Accuracy: 0.6089
+Epoch 0.57: adjusting learning rate of group 0 to 9.9998e-06.
+Epoch 13 - Validation Loss: 0.5489 - Validation Balanced Accuracy: 0.7131
+Adjusting learning rate of group 0 to 9.9981e-06.
+Epoch 14 - Train Loss: 0.5251 - Train Balanced Accuracy: 0.6975
+Epoch 0.57: adjusting learning rate of group 0 to 9.9998e-06.
+Epoch 14 - Validation Loss: 0.5499 - Validation Balanced Accuracy: 0.7131
+Adjusting learning rate of group 0 to 9.9981e-06.
+Epoch 15 - Train Loss: 0.5844 - Train Balanced Accuracy: 0.5561
+Epoch 0.56: adjusting learning rate of group 0 to 9.9998e-06.
+Epoch 15 - Validation Loss: 0.5374 - Validation Balanced Accuracy: 0.6715
+Adjusting learning rate of group 0 to 9.9982e-06.
+Epoch 16 - Train Loss: 0.5419 - Train Balanced Accuracy: 0.6931
+Epoch 0.58: adjusting learning rate of group 0 to 9.9997e-06.
+Epoch 16 - Validation Loss: 0.5542 - Validation Balanced Accuracy: 0.7452
+Adjusting learning rate of group 0 to 9.9981e-06.
+Epoch 17 - Train Loss: 0.5184 - Train Balanced Accuracy: 0.7224
+Epoch 0.57: adjusting learning rate of group 0 to 9.9998e-06.
+Epoch 17 - Validation Loss: 0.5478 - Validation Balanced Accuracy: 0.7452
+Adjusting learning rate of group 0 to 9.9981e-06.
+Epoch 18 - Train Loss: 0.5703 - Train Balanced Accuracy: 0.6478
+Epoch 0.57: adjusting learning rate of group 0 to 9.9998e-06.
+Epoch 18 - Validation Loss: 0.5464 - Validation Balanced Accuracy: 0.7356
+Adjusting learning rate of group 0 to 9.9981e-06.
+Epoch 19 - Train Loss: 0.5147 - Train Balanced Accuracy: 0.7295
+Epoch 0.59: adjusting learning rate of group 0 to 9.9997e-06.
+Epoch 19 - Validation Loss: 0.5627 - Validation Balanced Accuracy: 0.7252
+Total training time in seconds: 306.5457
