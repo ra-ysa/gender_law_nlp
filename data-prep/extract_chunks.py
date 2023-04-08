@@ -8,6 +8,7 @@ N_SENTENCES_INTRO = 5 # number of sentences to use for building intro chunks
 N_SENTENCES_END = 10 # number of sentences to use for building end chunks 
 N_SENTENCES_RANDOM = 3 # number of sentences to use for building random chunks when not bias-related 
 # domain: [1, len(sentences)]
+BATCH_SIZE = 32 # number of chunks to use in test mode 
 
 def bias_extractor(text, bias, n):
 	'''
@@ -94,16 +95,35 @@ def random_extractor(text, n):
 
 def full_extractor(text):
 	'''
-	Extracts all sentences from the text
+	Extracts the whole content from the text, in BATCH_SIZE chunks
 
-	Extrai todas as sentencas do texto 
+	Extrai todo o conteudo do texto, em BATCH_SIZE chunks 
 	'''
 	sentences = re.split("[;.\s]+\s", text)
 	sentences = [s.strip() for s in sentences] 
-	all_sentences = []
-	for i in range(len(sentences)):
-		all_sentences.append(sentences[i])
-	return all_sentences 
+
+	while(len(sentences) < BATCH_SIZE):
+		sentences.append(random.choice(sentences)) # we pad the sentences list by repeating random sentences 
+
+	if(len(sentences) == BATCH_SIZE):
+		return sentences
+	else:
+		chunk_size = len(sentences) // BATCH_SIZE 
+
+		chunks = []
+		start = 0
+
+		for i in range(BATCH_SIZE):
+			stop = start + chunk_size
+			if(i==BATCH_SIZE-1): 
+				stop = len(sentences)
+				chunks.append(' '.join(sentences[start:stop]))
+			else:
+				chunks.append(' '.join(sentences[start:stop]))
+
+			start+=chunk_size
+
+		return chunks 
 
 
 df_annotation = pd.read_csv('annotate_filled.csv')
