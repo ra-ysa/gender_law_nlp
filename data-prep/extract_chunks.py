@@ -8,7 +8,7 @@ N_SENTENCES_INTRO = 5 # number of sentences to use for building intro chunks
 N_SENTENCES_END = 10 # number of sentences to use for building end chunks 
 N_SENTENCES_RANDOM = 3 # number of sentences to use for building random chunks when not bias-related 
 # domain: [1, len(sentences)]
-BATCH_SIZE = 32 # number of chunks to use in test mode 
+N_CHUNKS = 32 # number of chunks to use in test mode 
 
 def bias_extractor(text, bias, n):
 	'''
@@ -95,27 +95,27 @@ def random_extractor(text, n):
 
 def full_extractor(text):
 	'''
-	Extracts the whole content from the text, in BATCH_SIZE chunks
+	Extracts the whole content from the text, in N_CHUNKS chunks
 
-	Extrai todo o conteudo do texto, em BATCH_SIZE chunks 
+	Extrai todo o conteudo do texto, em N_CHUNKS chunks 
 	'''
 	sentences = re.split("[;.\s]+\s", text)
 	sentences = [s.strip() for s in sentences] 
 
-	while(len(sentences) < BATCH_SIZE):
+	while(len(sentences) < N_CHUNKS):
 		sentences.append(random.choice(sentences)) # we pad the sentences list by repeating random sentences 
 
-	if(len(sentences) == BATCH_SIZE):
+	if(len(sentences) == N_CHUNKS):
 		return sentences
 	else:
-		chunk_size = len(sentences) // BATCH_SIZE 
+		chunk_size = len(sentences) // N_CHUNKS 
 
 		chunks = []
 		start = 0
 
-		for i in range(BATCH_SIZE):
+		for i in range(N_CHUNKS):
 			stop = start + chunk_size
-			if(i==BATCH_SIZE-1): 
+			if(i==N_CHUNKS-1): 
 				stop = len(sentences)
 				chunks.append(' '.join(sentences[start:stop]))
 			else:
