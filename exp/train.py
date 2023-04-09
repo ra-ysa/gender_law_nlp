@@ -87,7 +87,7 @@ def eval_graph(train: list, val: list, metric: str):
 def run(args):
 
     train_data, val_data, test_data = prepare_datasets(args.data_path)  
-
+    
     tokenizer = AutoTokenizer.from_pretrained(args.model_name, cache_dir="transformers")
     trainset = GBVDataset(train_data,
                         tokenizer,
@@ -103,21 +103,20 @@ def run(args):
                         tokenizer,
                         args.max_seq_length,
                         data_type='test')
-
+    
     trainloader = DataLoader(trainset, batch_size=args.batch_size, shuffle=True)
     valloader = DataLoader(valset, batch_size=args.batch_size, shuffle=False)
-    testloader = DataLoader(testset, batch_size=args.batch_size, shuffle=False)
+    testloader = DataLoader(testset, batch_size=args.batch_size, shuffle=False) 
 
-
-    #model = BertFineTuner(
-    #    model_name=args.model_name,
-    #    num_classes=args.num_classes
-    #)
-    
-    model = BertBaseline(
+    model = BertFineTuner(
         model_name=args.model_name,
         num_classes=args.num_classes
     )
+    
+    #model = BertBaseline(
+    #    model_name=args.model_name,
+    #    num_classes=args.num_classes
+    #)
     
     device = f'cuda:{args.device}' if args.device.isnumeric() else 'cpu'
 
@@ -179,7 +178,31 @@ def run(args):
             balanced_accuracy = balanced_accuracy_score(labels, y_hat)
                        
         return loss.item(), balanced_accuracy, labels, y_hat
+    
+    
+    def test_step(input):
+             
+        input_ids = input['input_ids'].to(device)
+        attention_mask = input['attention_mask'].to(device)
+        labels = input['labels'].to(device)
+        labels_one_hot = torch.nn.functional.one_hot(labels, num_classes=args.num_classes).to(device)
+        labels_one_hot = labels_one_hot.float()
 
+        # Forward
+        y_logits = model(input_ids, attention_mask, labels)
+
+        # Accuracy
+        y_hat = torch.argmax(y_logits, dim=1)
+        #accuracy = (y_hat == labels).type(torch.float).mean() # not balanced
+        y_hat = y_hat.cpu().numpy()
+        labels = labels.cpu().numpy()
+        if(1 in y_hat): # if bias was detected in any chunk, all chunks from the same case are assigned the same label
+            for i in range(len(y_hat)):
+                y_hat[i] = 1
+        balanced_accuracy = balanced_accuracy_score(labels, y_hat)
+
+        return balanced_accuracy, labels, y_hat    
+    
     start_time = time.time()
     
     train_losses = []
@@ -190,21 +213,7 @@ def run(args):
     current_loss_val = float("inf")  
     
     for epoch in tqdm(range(args.n_epochs),leave=True):
-                
-        '''
-        train_loss, train_bal_acc = np.average([
-            train_step(input) 
-            for input in tqdm(trainloader, desc=f"Training Epoch {epoch}", leave=False)
-        ],axis=0)
-        print(f"Epoch {epoch} - Train Loss: {train_loss:.4f} - Train Balanced Accuracy: {train_bal_acc:.4f}")
 
-        
-        valid_loss, valid_bal_acc = np.average([
-                validation_step(input, epoch)
-                for input in tqdm(valloader, desc=f"Validation Epoch {epoch}", leave=False)
-            ],axis=0)
-        print(f"Epoch {epoch} - Validation Loss: {valid_loss:.4f} - Validation Balanced Accuracy: {valid_bal_acc:.4f}")
-        '''
         # Training
         train_loss = []
         train_bal_acc = []
@@ -272,15 +281,32 @@ def run(args):
     torch.save(model.state_dict(), args.model_output_dir)
     end_time = time.time()
     print("Total training time in seconds:", round(end_time-start_time, 4))
-
+    
+    # Test
+    start_time = time.time()
     # loads model from disk
     # https://pytorch.org/tutorials/beginner/saving_loading_models.html
-    # model = BertFineTuner(
-    #     model_name=args.model_name,
-    #     num_classes=args.num_classes
-    # )
-    # model.load_state_dict(torch.load(PATH))
-    # model.eval()
+    #model = BertFineTuner(
+    #    model_name=args.model_name,
+    #    num_classes=args.num_classes
+    #)
+    #model.load_state_dict(torch.load(args.model_output_dir))
+    #model = model.to(device)
+          
+    test_bal_acc = []
+    y_true_test = []
+    y_pred_test = []
+    for input in tqdm(testloader):
+        bal_acc, y_true, y_pred = test_step(input)
+        test_bal_acc.append(bal_acc)
+        y_true_test.append(y_true.tolist())
+        y_pred_test.append(y_pred.tolist())
+
+    test_bal_acc_final = np.average(test_bal_acc)
+    print("Final balanced accuracy for test set: {}".format(test_bal_acc_final))
+    end_time = time.time()
+    print("Total testing time in seconds:", round(end_time-start_time, 4))
+    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
