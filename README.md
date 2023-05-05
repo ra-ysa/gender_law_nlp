@@ -121,3 +121,10 @@ The repository is organized as follows:
 * Benatti, R. M. Revealing Gender Biases in Court Decisions with Natural Language Processing. Master's dissertation;
 * Raysa M. Benatti, Camila M. L. Villarroel, Sandra Avila, Esther L. Colombini, and Fabiana Severi. [Should I disclose my dataset? Caveats between reproducibility and individual data rights](https://aclanthology.org/2022.nllp-1.20/). In _Proceedings of the Natural Legal Language Processing Workshop 2022_, pages 228–237, 2022;
 * Datasets. 
+
+### License: 
+This work is published under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (CC BY-NC-SA 4.0), which means anyone is free to share it or adapt it, under the following terms:
+(a) Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use;
+(b) NonCommercial — You may not use the material for commercial purposes; 
+(c) ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+More details can be found [here](https://creativecommons.org/licenses/by-nc-sa/4.0/) and in the LICENSE.md file. 
