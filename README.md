@@ -118,9 +118,9 @@ The repository is organized as follows:
 ```
 
 ### Related publications:
-* Benatti, R. M. Revealing Gender Biases in Court Decisions with Natural Language Processing. Master's dissertation;
+* Raysa M. Benatti. Revealing Gender Biases in Court Decisions with Natural Language Processing. University of Campinas, 2023, supervised by Esther L. Colombini and Sandra Avila (Master's dissertation);
 * Raysa M. Benatti, Camila M. L. Villarroel, Sandra Avila, Esther L. Colombini, and Fabiana Severi. [Should I disclose my dataset? Caveats between reproducibility and individual data rights](https://aclanthology.org/2022.nllp-1.20/). In _Proceedings of the Natural Legal Language Processing Workshop 2022_, pages 228–237, 2022;
-* Datasets. 
+* Raysa M. Benatti and colaborators. Revealing Gender Biases in (TJSP) Court Decisions with Natural Language Processing, 2023. Available at [Zenodo](https://doi.org/10.5281/zenodo.7794781) (Datasets). 
 
 ### License: 
 This work is published under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (CC BY-NC-SA 4.0), which means anyone is free to share it or adapt it, under the following terms:
