@@ -124,7 +124,7 @@ The repository is organized as follows:
 
 ### License: 
 This work is published under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (CC BY-NC-SA 4.0), which means anyone is free to share it or adapt it, under the following terms:
-(a) Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use;
-(b) NonCommercial — You may not use the material for commercial purposes; 
-(c) ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-More details can be found [here](https://creativecommons.org/licenses/by-nc-sa/4.0/) and in the LICENSE.md file. 
+(a) Attribution: you must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use;
+(b) NonCommercial: you may not use the material for commercial purposes; 
+(c) ShareAlike: if you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+More details can be found [here](https://creativecommons.org/licenses/by-nc-sa/4.0/) and in the [```LICENSE``` file](https://github.com/ra-ysa/gender_law_nlp/blob/main/LICENSE). 
