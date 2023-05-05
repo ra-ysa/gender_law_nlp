@@ -1,11 +1,11 @@
 # Revealing gender biases in court decisions with natural language processing 
-Official repository of the project by Raysa M. Benatti and colaborators 
+_Official repository of the project by Raysa M. Benatti and colaborators_ 
 
 This repository contains the original scripts and results from the project, whose associated publications and datasets are listed below. 
-A complete description of our files, methods, tools, and pipelines can be found in this [dissertation](http://google.com). 
+A complete description of files, methods, tools, and pipelines can be found in this [dissertation](http://google.com). 
 
 The repository is organized as follows:
-* ```data-extract```: contains scripts used to extract our data, both for Dataset 1 (domestic violence cases -- ```lesao```) and Dataset 2 (parental alienation cases -- ```ap```); 
+* ```data-extract```: contains scripts used to extract the data, both for Dataset 1 (domestic violence cases -- ```lesao```) and Dataset 2 (parental alienation cases -- ```ap```); 
 * ```data-prep```: contains data preparation scripts; 
 * ```exp```: contains scripts used in the experimental pipeline and results (output files) as described in the original work. 
 
