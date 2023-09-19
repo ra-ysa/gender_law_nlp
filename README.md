@@ -13,7 +13,7 @@ The repository is organized as follows:
 .
 ├── data-extract
 │   ├── ap
-│   │   ├── getLIstAp.py
+│   │   ├── getListAp.py
 │   │   ├── prepareApTable.py
 │   │   └── pseudoscraper_ap.R
 │   └── lesao
