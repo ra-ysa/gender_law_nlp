@@ -5,7 +5,7 @@ This repository contains the original scripts and results from the project, whos
 A complete description of files, methods, tools, and pipelines can be found in this [dissertation](https://www.repositorio.unicamp.br/acervo/detalhe/1313341). 
 
 The repository is organized as follows:
-* ```data-extract```: contains scripts used to extract the data, both for Dataset 1 (domestic violence cases -- ```lesao```) and Dataset 2 (parental alienation cases -- ```ap```); 
+* ```data-extract```: contains scripts used to extract the data, both for Dataset 1 (domestic violence cases, DVC -- ```lesao```) and Dataset 2 (parental alienation cases, PAC -- ```ap```); 
 * ```data-prep```: contains data preparation scripts; 
 * ```exp```: contains scripts used in the experimental pipeline and results (output files) as described in the original work. 
 
