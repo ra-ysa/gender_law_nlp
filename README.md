@@ -118,9 +118,10 @@ The repository is organized as follows:
 ```
 
 ### Related publications
+* Raysa Benatti, Fabiana Severi, Sandra Avila, and Esther L. Colombini. [Gender Bias Detection in Court Decisions: A Brazilian Case Study](https://dl.acm.org/doi/10.1145/3630106.3658937). In _FAccT '24: Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency_, pages 746–763, 2024;
 * Raysa M. Benatti. [Revealing Gender Biases in Court Decisions with Natural Language Processing](https://www.repositorio.unicamp.br/acervo/detalhe/1313341). University of Campinas, 2023, supervised by Esther L. Colombini and Sandra Avila (Master's dissertation);
-* Raysa M. Benatti, Camila M. L. Villarroel, Sandra Avila, Esther L. Colombini, and Fabiana Severi. [Should I disclose my dataset? Caveats between reproducibility and individual data rights](https://aclanthology.org/2022.nllp-1.20/). In _Proceedings of the Natural Legal Language Processing Workshop 2022_, pages 228–237, 2022;
-* Raysa M. Benatti and colaborators. Revealing Gender Biases in (TJSP) Court Decisions with Natural Language Processing, 2023. Available at [Zenodo](https://doi.org/10.5281/zenodo.7794781) (Datasets).  
+* Raysa M. Benatti and colaborators. Revealing Gender Biases in (TJSP) Court Decisions with Natural Language Processing, 2023. Available at [Zenodo](https://doi.org/10.5281/zenodo.7794781) (Datasets);
+* Raysa M. Benatti, Camila M. L. Villarroel, Sandra Avila, Esther L. Colombini, and Fabiana Severi. [Should I disclose my dataset? Caveats between reproducibility and individual data rights](https://aclanthology.org/2022.nllp-1.20/). In _Proceedings of the Natural Legal Language Processing Workshop 2022_, pages 228–237, 2022.
 
 ### License
 This work is published under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (CC BY-NC-SA 4.0), which means anyone is free to share it or adapt it, under the following terms:
